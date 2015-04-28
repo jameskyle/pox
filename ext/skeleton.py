@@ -20,14 +20,14 @@ adjust the Copyright above, and to delete the Apache license if you
 don't want to release under Apache (but consider doing so!).
 
 Rename this file to whatever you like, .e.g., mycomponent.py.  You can
-then invoke it with "./pox.py mycomponent" if you leave it in the
+then invoke it with "pox mycomponent" if you leave it in the
 ext/ directory.
 
 Implement a launch() function (as shown below) which accepts commandline
 arguments and starts off your component (e.g., by listening to events).
 
 Edit this docstring and your launch function's docstring.  These will
-show up when used with the help component ("./pox.py help --mycomponent").
+show up when used with the help component ("pox help --mycomponent").
 """
 
 # Import some POX stuff
@@ -63,7 +63,7 @@ def launch (foo, bar = False):
   # specify a keyword arguments catch-all (e.g., **kwargs).
 
   # For example, you can execute this component as:
-  # ./pox.py skeleton --foo=3 --bar=4
+  # pox skeleton --foo=3 --bar=4
 
   # Note that arguments passed from the commandline are ordinarily
   # always strings, and it's up to you to validate and convert them.
@@ -95,7 +95,7 @@ def breakfast ():
   # You can invoke other functions from the commandline too.  We call
   # these multiple or alternative launch functions.  To execute this
   # one, you'd do:
-  # ./pox.py skeleton:breakfast
+  # pox skeleton:breakfast
 
   import random
   items = "egg,bacon,sausage,baked beans,tomato".split(',')

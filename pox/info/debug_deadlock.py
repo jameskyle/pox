@@ -18,7 +18,7 @@ Prints stack info for all threads.
 (Might be more useful if it only printed stack frames that
 were not changing, sort of like recoco_spy.)
 
-This was initially factored out from a pox.py modification by
+This was initially factored out from a pox modification by
 Colin or Andi.
 """
 

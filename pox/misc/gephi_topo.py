@@ -23,7 +23,7 @@ sending detected switches, links, and (optionally) hosts.
 Based on POXDesk's tinytopo module.
 Requires discovery.  host_tracker is optional.
 
-pox.py openflow.discovery misc.gephi_topo host_tracker forwarding.l2_learning
+pox openflow.discovery misc.gephi_topo host_tracker forwarding.l2_learning
 """
 
 from pox.core import core

@@ -21,7 +21,7 @@ def launch (__INSTANCE__=None, **kw):
   Allows configuring log levels from the commandline.
 
   For example, to turn off the verbose web logging, try:
-  pox.py web.webcore log.level --web.webcore=INFO
+  pox web.webcore log.level --web.webcore=INFO
   """
   for k,v in kw.iteritems():
     if v is True:

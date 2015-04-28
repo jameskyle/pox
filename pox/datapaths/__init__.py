@@ -16,7 +16,7 @@
 Lets you start a default instance of the datapath, for what it's worth.
 
 Example:
-./pox.py --no-openflow datapaths:softwareswitch --address=localhost
+pox --no-openflow datapaths:softwareswitch --address=localhost
 """
 
 from pox.lib.ioworker.workers import BackoffWorker

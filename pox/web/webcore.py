@@ -26,8 +26,8 @@ wrapRequestHandler() function, like so:
   core.WebServer.set_handler("/foo", wrapRequestHandler(CHRH))
 
 .. now URLs under the /foo/ directory will let you browse through the
-filesystem next to pox.py.  If you create a cgi-bin directory next to
-pox.py, you'll be able to run executables in it.
+filesystem next to pox.  If you create a cgi-bin directory next to
+pox, you'll be able to run executables in it.
 
 For this specific purpose, there's actually a SplitCGIRequestHandler
 which demonstrates wrapping a normal request handler while also

@@ -16,7 +16,7 @@
 Software switch with PCap ports
 
 Example:
-./pox.py --no-openflow datapaths.pcap_switch --address=localhost
+pox --no-openflow datapaths.pcap_switch --address=localhost
 """
 
 from pox.core import core

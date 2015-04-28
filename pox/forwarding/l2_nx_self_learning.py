@@ -18,7 +18,7 @@ This makes Nicira-extension capable switches into learning switches
 This uses the "learn" action so that switches become learning switches
 *with no controller involvement*.
 
-  ./pox.py openflow.nicira forwarding.l2_nx_self_learning
+  pox openflow.nicira forwarding.l2_nx_self_learning
 """
 
 from pox.core import core

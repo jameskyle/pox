@@ -19,7 +19,7 @@ modules.  For example, openflow.topology populates the topology object
 with OpenFlow switches.
 
 Note that this means that you often want to invoke something like:
-   $ ./pox.py topology openflow.discovery openflow.topology
+   $ pox topology openflow.discovery openflow.topology
 """
 
 from pox.lib.revent import *

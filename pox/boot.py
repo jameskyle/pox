@@ -1,5 +1,3 @@
-#!/bin/sh -
-
 # Copyright 2011,2012,2013 James McCauley
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,31 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# If you have PyPy 1.6+ in a directory called pypy alongside pox.py, we
+# If you have PyPy 1.6+ in a directory called pypy alongside pox, we
 # use it.
 # Otherwise, we try to use a Python interpreter called python2.7, which
 # is a good idea if you're using Python from MacPorts, for example.
 # We fall back to just "python" and hope that works.
 
 #TODO: Make runnable by itself (paths need adjusting, etc.).
-
-''''true
-export OPT="-u -O"
-export FLG=""
-if [ "$(basename $0)" = "debug-pox.py" ]; then
-  export OPT=""
-  export FLG="--debug"
-fi
-
-if [ -x pypy/bin/pypy ]; then
-  exec pypy/bin/pypy $OPT "$0" $FLG "$@"
-fi
-
-if type python2.7 > /dev/null; then
-  exec python2.7 $OPT "$0" $FLG "$@"
-fi
-exec python $OPT "$0" $FLG "$@"
-'''
 
 from __future__ import print_function
 
@@ -345,7 +325,7 @@ _help_text = """
 POX is a Software Defined Networking controller framework.
 
 The commandline of POX is like:
-pox.py [POX options] [C1 [C1 options]] [C2 [C2 options]] ...
+pox [POX options] [C1 [C1 options]] [C2 [C2 options]] ...
 
 Notable POX options include:
   --verbose       Print more debugging information (especially useful for
@@ -358,10 +338,10 @@ C1, C2, etc. are component names (e.g., Python modules).  Options they
 support are up to the module.  As an example, you can load a learning
 switch app that listens on a non-standard port number by specifying an
 option to the of_01 component, and loading the l2_learning component like:
-  ./pox.py --verbose openflow.of_01 --port=6634 forwarding.l2_learning
+  pox --verbose openflow.of_01 --port=6634 forwarding.l2_learning
 
 The 'help' component can give help for other components.  Start with:
-  ./pox.py help --help
+  pox help --help
 """.strip()
 
 
@@ -479,10 +459,10 @@ def boot (argv = None):
   Start up POX.
   """
 
-  # Add pox directory to path
-  base = sys.path[0]
-  sys.path.insert(0, os.path.abspath(os.path.join(base, 'pox')))
-  sys.path.insert(0, os.path.abspath(os.path.join(base, 'ext')))
+  # Add pox library to path and the current $PWD/ext
+  curdir = os.path.join(os.path.abspath(''), 'ext')
+  sys.path.insert(0, curdir)
+  sys.path.insert(0, core.library)
 
   thread_count = threading.active_count()
 

@@ -45,8 +45,8 @@ def launch (__INSTANCE__ = None, **kw):
   Allows you to configure log handlers from the commandline.
 
   Examples:
-   ./pox.py log --file=pox.log,w --syslog --no-default
-   ./pox.py log --*TimedRotatingFile=filename=foo.log,when=D,backupCount=5
+   pox log --file=pox.log,w --syslog --no-default
+   pox log --*TimedRotatingFile=filename=foo.log,when=D,backupCount=5
 
   The handlers are most of the ones described in Python's logging.handlers,
   and the special one --no-default, which turns off the default logging to

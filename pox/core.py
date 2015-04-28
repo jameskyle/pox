@@ -554,6 +554,12 @@ class POXCore (EventMixin):
     return self.components[name]
 
 
+  @property
+  def library(self):
+    version = ".".join(map(str, core.version))
+    pox_dir = "pox-{0}".format(version)
+    return os.path.join(os.path.sep, 'var', 'lib', pox_dir)
+
 core = None
 
 def initialize ():

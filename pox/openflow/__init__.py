@@ -30,7 +30,7 @@ wrong more than once).  In POX, the raw events are available, but you will
 generally just want to listen to the aggregate stats events which take
 care of this for you and are only fired when all data is available.
 
-NOTE: This module is usually automatically loaded by pox.py
+NOTE: This module is usually automatically loaded by pox
 """
 
 from pox.lib.revent import *
